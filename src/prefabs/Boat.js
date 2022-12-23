@@ -7,10 +7,16 @@ class Boat extends Phaser.GameObjects.Sprite {
         this.rotationSpeed = 1;
     }
 
+    create(){
+        this.radians = 0;
+    }
+
     update(time, delta){
+        this.radians = this.angle*(Math.PI/180);
         if(keyUP.isDown){
-            this.x += Math.cos(this.angle) * this.speed;
-            this.y += Math.sin(this.angle) * this.speed;
+            
+            this.x += Math.cos(this.radians) * this.speed;
+            this.y += Math.sin(this.radians) * this.speed;
         }
         if(keyLEFT.isDown){
             this.angle -= this.rotationSpeed;
@@ -19,6 +25,7 @@ class Boat extends Phaser.GameObjects.Sprite {
         }
         else if(keyRIGHT.isDown){
             this.angle += this.rotationSpeed;
+            console.log(this.angle);
         }
     }
 
