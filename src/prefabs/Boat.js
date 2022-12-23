@@ -9,7 +9,7 @@ class Boat extends Phaser.GameObjects.Sprite {
     }
 
     update(time, delta){
-        if(Phaser.Input.Keyboard.JustDown(keyUP)){
+        if(keyUP.isDown){
             //sprite.x += Math.cos(this.rotation) * this.speed * delta / 1000;
             //sprite.y += Math.sin(this.rotation) * this.speed * delta / 1000;
             this.y -= 20;
