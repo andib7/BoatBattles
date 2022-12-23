@@ -3,23 +3,22 @@ class Boat extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
 
-        this.rotation = Math.PI / 2;
-        this.speed = 0;
-        this.rotationSpeed = 0;
+        this.speed = 2;
+        this.rotationSpeed = 1;
     }
 
     update(time, delta){
         if(keyUP.isDown){
-            //sprite.x += Math.cos(this.rotation) * this.speed * delta / 1000;
-            //sprite.y += Math.sin(this.rotation) * this.speed * delta / 1000;
-            this.y -= 20;
-            console.log("HI");
+            this.x += Math.cos(this.angle) * this.speed;
+            this.y += Math.sin(this.angle) * this.speed;
         }
-        if(this.speed == 1){
+        if(keyLEFT.isDown){
+            this.angle -= this.rotationSpeed;
 
+            console.log(this.angle);
         }
-        else if(this.speed == 2){
-
+        else if(keyRIGHT.isDown){
+            this.angle += this.rotationSpeed;
         }
     }
 
