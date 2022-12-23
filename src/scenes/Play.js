@@ -15,7 +15,7 @@ class Play extends Phaser.Scene {
         keyCLICK = this.input.keyboard.addKey(Phaser.Input.Mouse.MouseManager.onMouseDown);
 
         this.player = new Boat(this, game.config.width/2, game.config.height/2, 'boat', 0);
-        this.player.setScale(0.5);
+        this.player.setScale(0.2);
     }
 
     update(){
