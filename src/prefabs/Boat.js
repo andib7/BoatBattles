@@ -7,7 +7,7 @@ class Boat extends Phaser.GameObjects.Sprite {
         this.rotationSpeed = 1;
     }
 
-    update(time, delta){
+    update(){
         if(keyUP.isDown){
             this.x += Math.cos(this.angle) * this.speed;
             this.y += Math.sin(this.angle) * this.speed;
