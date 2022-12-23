@@ -4,7 +4,7 @@ class Play extends Phaser.Scene {
     }
 
     create(){
-        game.config.backgroundColor = "#ff86dd";
+        config.backgroundColor = "rgb(0, 0, 250)";
         console.log('Play');
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -14,7 +14,8 @@ class Play extends Phaser.Scene {
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyCLICK = this.input.keyboard.addKey(Phaser.Input.Mouse.MouseManager.onMouseDown);
 
-        this.player = new Boat(this, game.config.width/2, game.config.height/2, 'Boat', 0);
+        this.player = new Boat(this, game.config.width/2, game.config.height/2, 'boat', 0);
+        this.player.setScale(0.5);
     }
 
     update(){
