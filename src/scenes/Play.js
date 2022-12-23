@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         game.config.backgroundColor = "#ff86dd";
         console.log('Play');
 
-        this.player = new Boat(this, 0, 0, 'Boat');
+        this.player = new Boat(this, game.config.width/2, game.config.height/2, 'Boat', 0);
     }
 
     update(){
