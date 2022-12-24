@@ -20,15 +20,19 @@ class Play extends Phaser.Scene {
 
         this.player = new Boat(this, game.config.width/2, game.config.height/2, 'boat', 0);
         this.player.setScale(0.2);
+
+        this.index = 0;
     }
 
     update(){
+        this.index = 0;
         for(const item of this.bullets){
             item.update();
             if(!item.inBoundary){
                 item.destroy();
-                
+                this.bullets.splice(this.index, 1);
             }
+            this.index++;
         }
         this.player.update();
     }
