@@ -12,5 +12,5 @@ var config = {
 }
 
 var game = new Phaser.Game(config);
-
+var sfxExplosion;
 var keyF, keyLEFT, keyRIGHT, keyUP, keyDOWN, keyCLICK;
