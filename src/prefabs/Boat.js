@@ -10,6 +10,8 @@ class Boat extends Phaser.GameObjects.Sprite {
     create(){
         this.radians = 0;
         
+        
+        
     }
 
     update(time, delta){
@@ -28,6 +30,9 @@ class Boat extends Phaser.GameObjects.Sprite {
         else if(keyRIGHT.isDown){
             this.angle += this.rotationSpeed;
         }
+        
     }
+
+    
 
 }
