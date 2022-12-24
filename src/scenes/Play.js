@@ -23,7 +23,13 @@ class Play extends Phaser.Scene {
     }
 
     update(){
-        
+        for(const item of this.bullets){
+            item.update();
+            if(!item.inBoundary){
+                item.destroy();
+                
+            }
+        }
         this.player.update();
     }
 
