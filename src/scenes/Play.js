@@ -28,8 +28,6 @@ class Play extends Phaser.Scene {
     }
 
     mouseDown(mX, mY){
-        console.log(mX+", "+mY);
-        
         this.bullets.push(new Projectile(this, this.player.x, this.player.y, mX, mY, "projectile", 0));
         
     }

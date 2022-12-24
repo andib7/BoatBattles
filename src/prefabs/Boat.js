@@ -17,25 +17,23 @@ class Boat extends Phaser.GameObjects.Sprite {
 
     create(){
         this.radians = 0;
-        
-        
-        
     }
 
     update(){
+        this.radians = (this.angle*Math.PI)/180;
         if(keyUP.isDown){
-            this.body.velocity.x = Math.cos(this.angle) * this.speed;
-            this.body.velocity.y = Math.sin(this.angle) * this.speed;
+            this.body.velocity.x += Math.cos(this.radians) * this.speed;
+            this.body.velocity.y += Math.sin(this.radians) * this.speed;
+        }
+        if(keyDOWN.isDown){
+            this.body.velocity.x -= Math.cos(this.radians) * this.speed;
+            this.body.velocity.y -= Math.sin(this.radians) * this.speed;
         }
         if(keyLEFT.isDown){
             this.angle -= this.rotationSpeed;
         }
         else if(keyRIGHT.isDown){
             this.angle += this.rotationSpeed;
-        }
-        
+        }   
     }
-
-    
-
 }
