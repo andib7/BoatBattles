@@ -1,8 +1,13 @@
 var config = {
-    type: Phaser.CANVAS,
+    type: Phaser.Auto,
     width: window.innerWidth-30,
     height: window.innerHeight-30,
     backgroundColor: 'rgb(255, 0, 0)',
+    physics: {
+        default: 'arcade',
+        arcade: { y:300 },
+        debug: false
+    },
     scene: [ Load, Menu, Play ]
 }
 
